@@ -39,7 +39,7 @@
 	async function searchGame(query: string) {
 		try {
 			loading = true;
-			const response = await httpClient.get(`?search=${query}`);
+			const response = await httpClient.get(`https://softgenie.org/api/games?search=${query}`);
 			const data: ApiResponse = response.data;
 			games = data.results;
 			next = data.next;
@@ -109,7 +109,7 @@
 	<div class="bg-accent-dark">
 		<section
 			class="relative h-[500px] bg-cover bg-center"
-			style="background-image: url('https://plus.unsplash.com/premium_photo-1710409625244-e9ed7e98f67b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"
+			style="background-image: url('https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/03/pokemon-emerald-key-art-rayquaza.jpg');"
 		>
 			<div
 				class="bg-opacity-50 absolute inset-0 flex items-center justify-center bg-gradient-to-b from-black via-transparent to-black"
@@ -119,15 +119,21 @@
 						{displayedText}
 					</h1>
 					<p class="mb-6 text-lg md:text-xl">Discover your favorite games and more</p>
-					<div class="mx-auto flex justify-center">
-						<input
-							type="text"
-							placeholder="Search for games..."
-							bind:value={searchQuery}
-							class="text-midnight mr-4 w-full rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-						/>
+					<div class="mx-auto flex justify-center items-center">
+						<div class="relative w-full">
+							<input
+								type="text"
+								placeholder="Search for games..."
+								bind:value={searchQuery}
+								class="text-midnight w-full rounded-lg border border-gray-300 px-4 py-2 pl-10 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+							/>
+							<Icon
+								icon="mdi:magnify"
+								class="absolute text-midnight left-3 top-1/2 text-2xl transform -translate-y-1/2"
+							/>
+						</div>
 						<button
-							class="bg-midnight rounded-lg px-6 py-3 font-semibold text-white hover:bg-blue-700"
+							class="bg-midnight rounded-lg px-6 py-3 font-semibold mx-2 text-white hover:bg-blue-700 flex items-center"
 							on:click={() => searchGame(searchQuery)}
 						>
 							Search

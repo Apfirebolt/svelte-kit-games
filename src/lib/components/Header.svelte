@@ -8,15 +8,24 @@
 	];
 	export let title: string = 'Svelte Kit Games';
 	let isMenuOpen = false;
+	let selectedUrl = '/'; // Track the currently selected URL
 
 	function toggleMenu() {
 		isMenuOpen = !isMenuOpen;
 	}
+
+	function selectMenuItem(url: string) {
+		selectedUrl = url;
+		isMenuOpen = false; // Close the menu on selection (for mobile)
+	}
 </script>
 
 <header class="bg-midnight text-white">
+	<h1 class="text-3xl font-bold text-center bg-accent text-gray-800 py-4">{title}
+		<Icon icon="mdi:play-circle" class="inline-block text-midnight text-4xl ml-2 align-middle" />
+	</h1>
 	<div class="container mx-auto flex items-center justify-between px-6 py-4">
-		<h1 class="text-3xl font-bold">{title}</h1>
+		
 		<button
 			class="lg:hidden text-white focus:outline-none"
 			on:click={toggleMenu}
@@ -27,11 +36,12 @@
 		<nav class="hidden lg:block">
 			<ul class="flex space-x-6">
 				{#each menuItems as item}
-					<li class="relative group">
+					<li class="relative group w-32">
 						<a 
 							href={item.url} 
 							data-sveltekit-prefetch 
-							class="text-white px-3 py-2 rounded transition-all duration-300 ease-in-out group-hover:bg-bermuda group-hover:text-black group-hover:scale-105"
+							class="py-2 px-4 border-2 rounded transition-all duration-300 ease-in-out group-hover:bg-bermuda group-hover:scale-105 {selectedUrl === item.url ? 'bg-amber-500 text-black' : 'text-white'}"
+							on:click={() => selectMenuItem(item.url)}
 						>
 							{item.name}
 						</a>
@@ -59,7 +69,12 @@
 		<ul class="space-y-4 px-6">
 			{#each menuItems as item}
 				<li class="bg-bermuda text-white px-2 py-3 text-center shadow-xl rounded hover:bg-amber-500 transition-colors duration-300">
-					<a href={item.url} data-sveltekit-prefetch on:click={toggleMenu}>
+					<a 
+						href={item.url} 
+						data-sveltekit-prefetch 
+						class="{selectedUrl === item.url ? 'bg-amber-500 text-black' : ''}"
+						on:click={() => selectMenuItem(item.url)}
+					>
 						{item.name}
 					</a>
 				</li>

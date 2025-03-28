@@ -46,8 +46,8 @@
 {#if !game}
 	<Loader />
 {:else}
-	<section>
-		<div class="max-w-2xl text-center mx-auto my-5 text-white p-6 rounded-lg bg-opacity-50 bg-black">
+	<section class="bg-gradient-to-b from-blue-500 via-purple-600 to-pink-500 py-4 px-2">
+		<div class="max-w-2xl text-center mx-auto text-white p-6 rounded-lg bg-opacity-50 bg-black">
 			<h1 class="mb-6 text-5xl font-extrabold tracking-wide md:text-7xl" in:fly={{ x: 300, duration: 500 }}>
 				{displayedGameName}
 			</h1>

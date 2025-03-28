@@ -33,7 +33,7 @@
 
 <HeaderComponent />
 
-<section class="relative bg-cover bg-center h-[500px]" style="background-image: url('https://plus.unsplash.com/premium_photo-1710409625244-e9ed7e98f67b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+<section class="relative bg-cover bg-center h-[500px]" style="background-image: url('https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/03/pokemon-emerald-key-art-rayquaza.jpg');">
     <div class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black bg-opacity-50 flex items-center justify-center">
         <div class="text-center text-white">
             <h1 class="text-4xl md:text-6xl font-bold mb-4" in:fly={{ y: 50, duration: 500 }}>
@@ -42,7 +42,7 @@
             <p class="text-lg md:text-xl mb-6" in:fly={{ y: 50, duration: 500, delay: 200 }}>
                 Discover your favorite games and more
             </p>
-            <button class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg" in:fly={{ y: 50, duration: 500, delay: 400 }}>
+            <button class="px-6 py-3 bg-midnight hover:bg-blue-700 text-white font-semibold rounded-lg" in:fly={{ y: 50, duration: 500, delay: 400 }}>
                 Get Started
             </button>
         </div>
