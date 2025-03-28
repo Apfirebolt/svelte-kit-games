@@ -139,26 +139,29 @@
 		<div class="container mx-auto py-2">
 			<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 				{#each games as game (game.id)}
-					<div
-						class="bg-accent rounded-lg p-4 shadow-md"
-						transition:fly="{{ x: 300, duration: 500 }}"
-					>
+					<div class="relative group bg-accent rounded-lg overflow-hidden shadow-md">
 						<img
 							src={showGameImage(game)}
 							alt={game.title}
-							class="mb-4 h-48 w-full rounded object-cover"
+							class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
 						/>
-						<h2 class="mb-4 bg-white px-2 py-1 text-center text-xl font-bold">{game.title}</h2>
-						<p class="text-gray-600">Release Date: {game.release_date}</p>
-						<p class="text-gray-600">Genre: {game.genre}</p>
-						<p class="text-gray-600">Console: {game.console}</p>
-						<button
-							class="mt-2 rounded bg-bermuda px-4 py-2 text-white hover:bg-green-600"
-							on:click={() => goToMovieDetails(game)}
+						<div
+							class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 						>
-							<Icon icon="mdi:eye" class="mr-2 inline-block" />
-							View Details
-						</button>
+							<div class="p-4 text-white">
+								<h2 class="mb-2 text-xl font-bold">{game.title}</h2>
+								<p class="text-sm">Release Date: {game.release_date}</p>
+								<p class="text-sm">Genre: {game.genre}</p>
+								<p class="text-sm">Console: {game.console}</p>
+								<button
+									class="mt-2 rounded bg-bermuda px-4 py-2 text-white hover:bg-green-600"
+									on:click={() => goToMovieDetails(game)}
+								>
+									<Icon icon="mdi:eye" class="mr-2 inline-block" />
+									View Details
+								</button>
+							</div>
+						</div>
 					</div>
 				{/each}
 			</div>

@@ -1,5 +1,3 @@
-// src/routes/movies/[id]/+page.server.ts
-
 import type { PageServerLoad } from './$types';
 import httpClient from '$lib/plugins/interceptor';
 import type { Game } from '$lib/types/Game';

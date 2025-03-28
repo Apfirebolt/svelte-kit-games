@@ -1,5 +1,7 @@
 <script>
     import { fly } from 'svelte/transition';
+    import { writable } from 'svelte/store';
+    import { count } from '$lib/store';
     import HeaderComponent from '$lib/components/Header.svelte';
     import FooterComponent from '$lib/components/Footer.svelte';
 
@@ -15,6 +17,15 @@
             setTimeout(typeWriter, 100); // Adjust speed here
         }
     };
+
+    // Functions for global store
+    function incrementGlobal() {
+        count.update(n => n + 1);
+    }
+
+    function decrementGlobal() {
+        count.update(n => n - 1);
+    }
 
     // Start the typewriter effect when the component is mounted
     typeWriter();
@@ -59,5 +70,20 @@
         </div>
     </div>
 </section>
+
+<div class="container mx-auto my-3 px-2 py-4 bg-gray-100 rounded-lg">
+    <h2>Global Store</h2>
+    <p>Count: {$count}</p>
+    <button 
+        on:click={incrementGlobal} 
+        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+        Increment Global
+    </button>
+    <button 
+        on:click={decrementGlobal} 
+        class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">
+        Decrement Global
+    </button>
+</div>
 
 <FooterComponent />
