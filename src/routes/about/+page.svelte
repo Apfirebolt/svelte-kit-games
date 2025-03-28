@@ -1,7 +1,6 @@
 <script lang="ts">
     import { fly } from 'svelte/transition';
     import HeaderComponent from '$lib/components/Header.svelte';
-    import FooterComponent from '$lib/components/Footer.svelte';
     import StoreComponent from '$lib/components/Store.svelte';
 
     let text = "Welcome to Svelte Games";
@@ -22,6 +21,14 @@
     typeWriter();
 </script>
 
+<svelte:head>
+	<title>Svelte Kit Games - About</title>
+	<meta
+		name="description"
+		content="Discover the latest games, reviews, and more on Svelte Kit Games. Your ultimate gaming destination."
+	/>
+</svelte:head>
+
 <HeaderComponent title="About" />
 
 <section class="relative bg-cover bg-center h-[500px]" style="background-image: url('https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/03/pokemon-emerald-key-art-rayquaza.jpg');">
@@ -39,5 +46,3 @@
 </section>
 
 <StoreComponent />
-
-<FooterComponent />

@@ -24,13 +24,13 @@
     height: 64px;
     border-radius: 50%;
     border: 4px solid transparent;
-    border-top: 4px solid white;
+    border-top: 4px solid rgb(96, 15, 15);
     border-right: 4px solid var(--tw-ring-color, var(--tw-ring-offset-color, var(--tw-gradient-stops, var(--tw-bg-opacity, rgba(251, 146, 60, var(--tw-bg-opacity, 1))))));
     animation: spin 1s linear infinite;
   }
 
   .animated-bg {
-    background: linear-gradient(270deg, #ff7eb3, #ff758c, #ff6a5e, #ff7eb3);
+    background: linear-gradient(270deg, #3ab7bf, #FFFDF0, #578E7E, #ff7eb3);
     background-size: 400% 400%;
     animation: gradient 6s ease infinite;
   }

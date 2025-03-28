@@ -1,7 +1,7 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { fly, fade } from 'svelte/transition';
 	import HeaderComponent from '$lib/components/Header.svelte';
-	import FooterComponent from '$lib/components/Footer.svelte';
 	import Loader from '$lib/components/Loader.svelte';
 	import type { Game } from '$lib/types/Game'; // Import as a type
 
@@ -10,11 +10,13 @@
 	$: game = data.game as Game | null; // Assign data.game to the game variable.
 
 	let displayedGameName = '';
+	let clientOnly = false; // Flag to indicate if the component is mounted in the client
 	let gameNameIndex = 0;
+	let showImage = false; // Flag to control image visibility
 
 	const showGameImage = (game: Game) => {
 		return `https://www.vgchartz.com${game.img}`;
-	}
+	};
 
 	// Typewriter effect logic for game name
 	const typeWriterGameName = () => {
@@ -31,6 +33,14 @@
 		gameNameIndex = 0; // Reset index
 		typeWriterGameName();
 	}
+
+	// Set clientOnly to true when the component is mounted on the client
+	onMount(() => {
+		clientOnly = true;
+		setTimeout(() => {
+			showImage = true; // Show the image after 1 second
+		}, 1000);
+	});
 </script>
 
 <svelte:head>
@@ -51,12 +61,14 @@
 			<h1 class="mb-6 text-5xl font-extrabold tracking-wide md:text-7xl" in:fly={{ x: 300, duration: 500 }}>
 				{displayedGameName}
 			</h1>
-			<img
-				class="mx-auto mb-6 rounded-lg h-64 w-128 shadow-lg"
-				src={showGameImage(game)}
-				alt={game.title}
-				in:fade={{ delay: 1000 }}
-			/>
+			{#if clientOnly && showImage}
+				<img
+					class="mx-auto mb-6 rounded-lg h-64 w-128 shadow-lg"
+					src={showGameImage(game)}
+					alt={game.title}
+					in:fade={{ duration: 1000 }}
+				/>
+			{/if}
 			<p class="text-lg">
 				<strong>Genre:</strong> {game.genre}
 			</p>
@@ -78,5 +90,3 @@
 		</div>
 	</section>
 {/if}
-
-<FooterComponent />

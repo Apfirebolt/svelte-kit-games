@@ -3,7 +3,6 @@
 	import AOS from 'aos';
 	import 'aos/dist/aos.css';
 	import { onMount } from 'svelte';
-	import HeaderComponent from '$lib/components/Header.svelte';
 	import FooterComponent from '$lib/components/Footer.svelte';
 
 	let { children } = $props();
@@ -17,3 +16,5 @@
 </script>
 
 {@render children()}
+
+<FooterComponent />

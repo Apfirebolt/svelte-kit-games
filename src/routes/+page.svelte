@@ -3,7 +3,6 @@
     import { writable } from 'svelte/store';
     import { count } from '$lib/store';
     import HeaderComponent from '$lib/components/Header.svelte';
-    import FooterComponent from '$lib/components/Footer.svelte';
 
     let text = "Welcome to Svelte Games";
     let displayedText = "";
@@ -30,6 +29,14 @@
     // Start the typewriter effect when the component is mounted
     typeWriter();
 </script>
+
+<svelte:head>
+	<title>Svelte Kit Games - Home</title>
+	<meta
+		name="description"
+		content="Discover the latest games, reviews, and more on Svelte Kit Games. Your ultimate gaming destination."
+	/>
+</svelte:head>
 
 <HeaderComponent />
 
@@ -97,23 +104,19 @@
         <div class="text-center p-6 bg-white shadow-lg rounded-lg" data-aos="fade-left" in:fly={{ y: 50, duration: 500 }}>
             <h3 class="text-xl font-semibold mb-4">Special Feature</h3>
             <p>Highlight a unique feature or promotion here.</p>
-        </div>
-    </div>
+
+            <h2>Global Store</h2>
+            <p>Count: {$count}</p>
+            <button 
+                on:click={incrementGlobal} 
+                class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                Increment Global
+            </button>
+            <button 
+                on:click={decrementGlobal} 
+                class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">
+                Decrement Global
+            </button>
+                </div>
+            </div>
 </section>
-
-<div class="container mx-auto my-3 px-2 py-4 bg-gray-100 rounded-lg">
-    <h2>Global Store</h2>
-    <p>Count: {$count}</p>
-    <button 
-        on:click={incrementGlobal} 
-        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
-        Increment Global
-    </button>
-    <button 
-        on:click={decrementGlobal} 
-        class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">
-        Decrement Global
-    </button>
-</div>
-
-<FooterComponent />
