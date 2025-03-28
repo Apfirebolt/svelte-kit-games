@@ -1,9 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
-	import { fly } from 'svelte/transition';
 	import HeaderComponent from '$lib/components/Header.svelte';
-	import FooterComponent from '$lib/components/Footer.svelte';
 	import Loader from '$lib/components/Loader.svelte';
 	import Icon from '@iconify/svelte';
 	import httpClient from '$lib/plugins/interceptor';
@@ -192,5 +190,3 @@
 		</div>
 	</div>
 {/if}
-
-<FooterComponent />
