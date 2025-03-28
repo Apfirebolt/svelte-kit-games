@@ -56,7 +56,7 @@
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="text-center p-6 bg-white shadow-lg rounded-lg" in:fly={{ y: 50, duration: 500 }}>
-                <h3 class="text-xl font-semibold mb-4">Browse Movies</h3>
+                <h3 class="text-xl font-semibold mb-4">Browse Games</h3>
                 <p>Find Games by genre, rating, or release date.</p>
             </div>
             <div class="text-center p-6 bg-white shadow-lg rounded-lg" in:fly={{ y: 50, duration: 500, delay: 200 }}>
@@ -67,6 +67,36 @@
                 <h3 class="text-xl font-semibold mb-4">Get Recommendations</h3>
                 <p>Discover Games tailored to your taste.</p>
             </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-12 bg-gray-100">
+    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Left Column (2/3) -->
+        <div class="md:col-span-2">
+            <h2 class="text-3xl font-bold text-center mb-8" data-aos="fade-up">
+            Explore Our Features
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="text-center p-6 bg-white shadow-lg rounded-lg" data-aos="fade-up">
+                <h3 class="text-xl font-semibold mb-4">Browse Games</h3>
+                <p>Find Games by genre, rating, or release date.</p>
+            </div>
+            <div class="text-center p-6 bg-white shadow-lg rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="text-xl font-semibold mb-4">Create Watchlists</h3>
+                <p>Save your favorite Games to play later.</p>
+            </div>
+            <div class="text-center p-6 bg-white shadow-lg rounded-lg" data-aos="fade-up" data-aos-delay="400">
+                <h3 class="text-xl font-semibold mb-4">Get Recommendations</h3>
+                <p>Discover Games tailored to your taste.</p>
+            </div>
+            </div>
+        </div>
+        <!-- Right Column (1/3) -->
+        <div class="text-center p-6 bg-white shadow-lg rounded-lg" data-aos="fade-left" in:fly={{ y: 50, duration: 500 }}>
+            <h3 class="text-xl font-semibold mb-4">Special Feature</h3>
+            <p>Highlight a unique feature or promotion here.</p>
         </div>
     </div>
 </section>

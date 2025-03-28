@@ -28,7 +28,7 @@
     }
 </script>
 
-<div class="container mx-auto my-3 px-2 py-4 bg-gray-100 rounded-lg">
+<div class="container mx-auto my-3 px-2 py-4 bg-gray-100 rounded-lg" data-aos="fade-up">
     <h2>Global Store</h2>
     <p>Count: {$count}</p>
     <button 
@@ -50,7 +50,7 @@
     />
 </div>
 
-<div class="container mx-auto my-3 px-2 py-4 bg-gray-100 rounded-lg">
+<div class="container mx-auto my-3 px-2 py-4 bg-gray-100 rounded-lg" data-aos="zoom-in-left">
     <h2>Local Store</h2>
     <p>Count: {$localCount}</p>
     <button 
