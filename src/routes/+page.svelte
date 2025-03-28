@@ -3,7 +3,7 @@
     import HeaderComponent from '$lib/components/Header.svelte';
     import FooterComponent from '$lib/components/Footer.svelte';
 
-    let text = "Welcome to Svelte Movies";
+    let text = "Welcome to Svelte Games";
     let displayedText = "";
     let index = 0;
 
@@ -29,7 +29,7 @@
                 {displayedText}
             </h1>
             <p class="text-lg md:text-xl mb-6" in:fly={{ y: 50, duration: 500, delay: 200 }}>
-                Discover your favorite movies and more
+                Discover your favorite games and more
             </p>
             <button class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg" in:fly={{ y: 50, duration: 500, delay: 400 }}>
                 Get Started
@@ -46,15 +46,15 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="text-center p-6 bg-white shadow-lg rounded-lg" in:fly={{ y: 50, duration: 500 }}>
                 <h3 class="text-xl font-semibold mb-4">Browse Movies</h3>
-                <p>Find movies by genre, rating, or release date.</p>
+                <p>Find Games by genre, rating, or release date.</p>
             </div>
             <div class="text-center p-6 bg-white shadow-lg rounded-lg" in:fly={{ y: 50, duration: 500, delay: 200 }}>
                 <h3 class="text-xl font-semibold mb-4">Create Watchlists</h3>
-                <p>Save your favorite movies to watch later.</p>
+                <p>Save your favorite Games to play later.</p>
             </div>
             <div class="text-center p-6 bg-white shadow-lg rounded-lg" in:fly={{ y: 50, duration: 500, delay: 400 }}>
                 <h3 class="text-xl font-semibold mb-4">Get Recommendations</h3>
-                <p>Discover movies tailored to your taste.</p>
+                <p>Discover Games tailored to your taste.</p>
             </div>
         </div>
     </div>

@@ -3,7 +3,7 @@
     import HeaderComponent from '$lib/components/Header.svelte';
     import FooterComponent from '$lib/components/Footer.svelte';
 
-    let text = "Welcome to Svelte Movies";
+    let text = "Welcome to Svelte Games";
     let displayedText = "";
     let index = 0;
 

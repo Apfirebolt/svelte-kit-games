@@ -71,6 +71,10 @@
 	let displayedText = '';
 	let index = 0;
 
+	const showGameImage = (game: Game) => {
+		return `https://www.vgchartz.com${game.img}`;
+	}
+
 	// Typewriter effect logic
 	const typeWriter = () => {
 		if (index < text.length) {
@@ -89,18 +93,18 @@
 </script>
 
 <svelte:head>
-	<title>Movies - Browse Latest Movies</title>
+	<title>Games - Browse Latest Games</title>
 	<meta
 		name="description"
-		content="Explore a collection of the latest movies, including genres, ratings, and more. Find your next favorite movie here!"
+		content="Explore a collection of the latest games, including genres, ratings, and more. Find your next favorite game here!"
 	/>
 </svelte:head>
 
-<HeaderComponent title="Movies" />
+<HeaderComponent title="Games" />
 {#if loading}
 	<Loader />
 {:else if error}
-	<p class="text-red-500">Error loading movies: {error.message}</p>
+	<p class="text-red-500">Error loading games: {error.message}</p>
 {:else}
 	<div class="bg-accent-dark">
 		<section
@@ -114,11 +118,11 @@
 					<h1 class="mb-4 text-4xl font-bold md:text-6xl">
 						{displayedText}
 					</h1>
-					<p class="mb-6 text-lg md:text-xl">Discover your favorite movies and more</p>
+					<p class="mb-6 text-lg md:text-xl">Discover your favorite games and more</p>
 					<div class="mx-auto flex justify-center">
 						<input
 							type="text"
-							placeholder="Search for movies..."
+							placeholder="Search for games..."
 							bind:value={searchQuery}
 							class="text-midnight mr-4 w-full rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
 						/>
@@ -139,6 +143,11 @@
 						class="bg-accent rounded-lg p-4 shadow-md"
 						transition:fly="{{ x: 300, duration: 500 }}"
 					>
+						<img
+							src={showGameImage(game)}
+							alt={game.title}
+							class="mb-4 h-48 w-full rounded object-cover"
+						/>
 						<h2 class="mb-4 bg-white px-2 py-1 text-center text-xl font-bold">{game.title}</h2>
 						<p class="text-gray-600">Release Date: {game.release_date}</p>
 						<p class="text-gray-600">Genre: {game.genre}</p>

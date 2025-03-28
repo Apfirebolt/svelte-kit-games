@@ -4,7 +4,7 @@
 		{ name: 'Home', url: '/' },
 		{ name: 'About', url: '/about' },
 		{ name: 'Contact', url: '/contact' },
-		{ name: 'Movies', url: '/movies' }
+		{ name: 'Games', url: '/games' }
 	];
 </script>
 
@@ -18,7 +18,7 @@
             {/each}
         </nav>
         <p class="text-sm">
-            &copy; {year} Sveltekit Movies. All rights reserved.
+            &copy; {year} Sveltekit Games. All rights reserved.
         </p>
     </div>
 </footer>

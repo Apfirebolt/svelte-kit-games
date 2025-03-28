@@ -6,7 +6,7 @@
 		{ name: 'Contact', url: '/contact' },
 		{ name: 'Games', url: '/games' }
 	];
-	export let title: string = 'Svelte Kit Movies';
+	export let title: string = 'Svelte Kit Games';
 	let isMenuOpen = false;
 
 	function toggleMenu() {
